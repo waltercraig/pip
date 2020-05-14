@@ -1,0 +1,97 @@
+$grid-columns: 12 !default;
+$container-max-width: 1200px;
+$col-padding: 1rem;
+
+// 01 - container
+// Usage: https://gist.github.com/waltercraig/54b4fdd26ce426686ab16ea0efcdf4b6
+.container {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    padding-left: $col-padding;
+    padding-right: $col-padding;
+}
+
+// 02 - Container Full
+.container-full {
+    margin: 0;
+    max-width: 100%;
+}
+
+// 03 - Container Strict
+// Usage:
+.container-strict {
+    @include respond-to('small'){
+        max-width: $break-sml;
+    }
+    @include respond-to('medium'){
+        max-width: $break-md;
+    }
+    @include respond-to('large'){
+        max-width: $break-lg;
+    }
+    @include respond-to('xl-large'){
+        max-width: $break-xl;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    //Apply style to children not all descendants
+    > * {
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    &--padding {
+        margin-left: -$col-padding;
+        margin-right: -$col-padding;
+
+        //Apply padding to children & not all descendants
+        > * {
+            padding-left: $col-padding;
+            padding-right: $col-padding;
+        }
+    }
+}
+
+// Grid
+// Usage: https://gist.github.com/waltercraig/54b4fdd26ce426686ab16ea0efcdf4b6
+@for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+      max-width: #{100% * $i / $grid-columns};
+    }
+}
+  
+@for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+        @include respond-to('small') {
+            max-width: #{100% * $i / $grid-columns};
+        }
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+        @include respond-to('medium') {
+            max-width: #{100% * $i / $grid-columns};
+        }
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+        @include respond-to('large') {
+            max-width: #{100% * $i / $grid-columns};
+        }
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .col-xl-#{$i} {
+        @include respond-to('xl-large') {
+            max-width: #{100% * $i / $grid-columns};
+        }
+    }
+}

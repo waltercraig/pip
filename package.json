@@ -1,0 +1,34 @@
+{
+  "name": "pip",
+  "version": "0.0.1",
+  "description": "Boilerplate for creating vanilla javascript applications. Includes Parcel bundler, bable plus sass",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000 --open",
+    "build": "parcel build public/index.html --out-dir dist --public-url ./",
+    "clean": "rimraf ./development && rimraf -rf ./.cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waltercraig/pip.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Walter Craig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waltercraig/pip/issues"
+  },
+  "homepage": "https://github.com/waltercraig/pip#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/runtime-corejs2": "^7.9.6",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.5"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
