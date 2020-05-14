@@ -1,5 +1,5 @@
 # PiP
-Boilerplate for creating vanilla javascript applications. Includes Parcel bundler, bable plus sass
+Boilerplate for creating vanilla javascript applications. Includes Parcel bundler, babel plus sass
 
 ## Usage
 
